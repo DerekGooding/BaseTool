@@ -8,6 +8,7 @@ Table of contents:
 - [Random Extensions](#random-extensions)
 - [String Extensions](#string-extensions)
 - [Vector Extensions](#vector-extensions)
+- [Transform Extensions](#transform-extensions)
 
 ## Camera Extensions
 
@@ -274,4 +275,17 @@ Vector3 pos3 = new(4f, 0, 3f);
 Debug.Log(pos1.LimitLength()); // (0.71, 0.00, 0.71)
 Debug.Log(pos2.LimitLength()); // (0.50, 0.00, 0.00)
 Debug.Log(pos3.LimitLength(4f)); // (3.20, 0.00, 2.40)
+```
+
+## Transform Extensions
+
+### 'Clear()'
+
+Destroys all children of the transform.
+
+```csharp
+using UnityEngine;
+
+for (int i = transform.childCount - 1; i >= 0; i--)
+    GameObject.Destroy(transform.GetChild(i).gameObject);
 ```
